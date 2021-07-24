@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <array name="category">
+        <item>المقبلات</item>
+        <item>السلطات</item>
+        <item>بيتزا</item>
+        <item>مأكولات بحرية</item>
+        <item>المعجنات</item>
+        <item>وجبات اللحوم</item>
+        <item>وجبات الدجاج</item>
+        <item>وجبات الأسماك</item>
+        <item>سندويشات الدجاج</item>
+        <item>المشروبات الباردة</item>
+        <item>الحلويات</item>
+        <item>المشروبات الساخنة</item>
+        <item>الشوربات</item>
+        <item>اللحوم</item>
+        <item>السندوتشات</item>
+        <item>الباستا</item>
+        <item>مقبلات ساخنة</item>
+        <item>الأصناف الجانبية</item>
+        <item>الإضافات</item>
+        <item>المشاوي</item>
+        <item>الدجاج</item>
+        <item>الشوربة والخبز</item>
+        <item>مقبلات باردة</item>
+    </array>
+</resources>
