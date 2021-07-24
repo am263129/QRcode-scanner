@@ -8,18 +8,29 @@
     tools:context=".Activity.DetailActivity">
 
 
-    <ImageView
-        android:id="@+id/pic"
+    <androidx.cardview.widget.CardView
+        android:id="@+id/pic_area"
         android:layout_width="0dp"
         android:layout_height="0dp"
+        android:layout_marginTop="16dp"
+        app:cardCornerRadius="20dp"
         app:layout_constraintDimensionRatio="1"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintWidth_percent="0.7"
-        tools:srcCompat="@tools:sample/avatars" />
+        app:layout_constraintWidth_percent="0.9"
+        tools:srcCompat="@tools:sample/avatars">
 
-    <LinearLayout
+        <ImageView
+            android:id="@+id/pic"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/test" />
+    </androidx.cardview.widget.CardView>
+
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:orientation="vertical"
@@ -27,129 +38,77 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/pic">
+        app:layout_constraintTop_toBottomOf="@+id/pic_area">
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="1"
-            android:gravity="right|center_vertical"
-            android:orientation="horizontal">
+        <TextView
+            android:id="@+id/name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:layout_marginEnd="16dp"
+            android:layout_weight="0.2"
+            android:fontFamily="@font/nkar"
+            android:gravity="right"
+            android:text="TextView"
+            android:textColor="@color/black"
+            android:textSize="34sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
-            <TextView
-                android:id="@+id/name"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="0.2"
-                android:gravity="right"
-                android:text="TextView"
-                android:textSize="24sp" />
+        <TextView
+            android:id="@+id/desc"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:fontFamily="@font/nkar"
+            android:gravity="right"
+            android:maxLines="3"
+            android:text="TextView"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            app:layout_constraintEnd_toEndOf="@+id/name"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/name" />
 
+        <TextView
+            android:id="@+id/textView4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:fontFamily="@font/nkar"
+            android:text="سعر الوجبة"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            app:layout_constraintEnd_toEndOf="@+id/desc"
+            app:layout_constraintTop_toBottomOf="@+id/desc" />
 
-        </LinearLayout>
+        <TextView
+            android:id="@+id/price"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            android:fontFamily="@font/nkar"
+            android:gravity="right"
+            android:text="TextView"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toBottomOf="@+id/textView4"
+            app:layout_constraintEnd_toStartOf="@+id/textView4"
+            app:layout_constraintTop_toTopOf="@+id/textView4" />
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="0.5"
-            android:gravity="right|center_vertical"
-            android:orientation="horizontal">
-
-            <TextView
-                android:id="@+id/category"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="0.8"
-                android:gravity="right"
-                android:text=""
-                android:textSize="16sp" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="0.2"
-                android:gravity="right"
-                android:text="قسم الوجبة"
-                android:textSize="16sp" />
-
-
-        </LinearLayout>
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="0.5"
-            android:gravity="right|center_vertical"
-            android:orientation="horizontal">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="0.8"
-                android:gravity="right"
-                android:text="شيكل"
-                android:textSize="16sp" />
-
-            <TextView
-                android:id="@+id/price"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="0.2"
-                android:gravity="right"
-                android:text=""
-                android:textSize="16sp" />
-
-
-        </LinearLayout>
-
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="1"
-            android:gravity="right|center_vertical"
-            android:orientation="horizontal">
-
-            <TextView
-                android:id="@+id/res_name"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="0.8"
-                android:gravity="right"
-                android:text="TextView"
-                android:textSize="16sp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toStartOf="@+id/res_image"
-                app:layout_constraintTop_toTopOf="parent" />
-
-            <ImageView
-                android:id="@+id/res_image"
-                android:layout_width="0dp"
-                android:layout_height="0dp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintDimensionRatio="1"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHeight_percent="0.8"
-                app:layout_constraintTop_toTopOf="parent" />
+        <TextView
+            android:id="@+id/textView6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:fontFamily="@font/nkar"
+            android:text="شيكل"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toBottomOf="@+id/price"
+            app:layout_constraintEnd_toStartOf="@+id/price"
+            app:layout_constraintTop_toTopOf="@+id/price" />
 
 
-        </androidx.constraintlayout.widget.ConstraintLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="1"
-            android:gravity="right|center_vertical"
-            android:orientation="horizontal">
-
-            <TextView
-                android:id="@+id/desc"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="0.8"
-                android:gravity="right"
-                android:text="TextView"
-                android:textSize="24sp" />
-
-
-        </LinearLayout>
-    </LinearLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

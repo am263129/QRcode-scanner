@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/relative_layout_slide"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/black"
+    tools:context=".Activity.OnboardActivity">
+    <com.learntodroid.androidqrcodescanner.Views.ClickableViewPager
+        android:gravity="center"
+        android:id="@+id/view_pager_slide"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+    </com.learntodroid.androidqrcodescanner.Views.ClickableViewPager>
+    <LinearLayout
+        android:id="@+id/linear_layout_skip"
+        android:background="?android:attr/selectableItemBackground"
+        android:clickable="true"
+        android:focusable="true"
+        android:orientation="horizontal"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp" >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:layout_marginTop="10dp"
+            android:gravity="center"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:text="SKIP"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            android:textSize="18dp" />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_alignParentBottom="true"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="51dp">
+        <RelativeLayout
+            android:gravity="center"
+            android:layout_width="match_parent"
+            android:layout_height="50dp">
+
+            <com.github.vivchar.viewpagerindicator.ViewPagerIndicator
+                android:id="@+id/view_pager_indicator"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="20dp"
+                android:padding="5dp"
+                app:delimiterSize="6dp"
+                app:itemSelectedTint="@color/guider_orange"
+                app:itemSize="8dp"
+                app:itemTint="@color/white"
+                app:showDividers="beginning"
+
+                />
+            <LinearLayout
+                android:id="@+id/linear_layout_next"
+                android:background="?android:attr/selectableItemBackground"
+                android:clickable="true"
+                android:focusable="true"
+                android:orientation="horizontal"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentBottom="true"
+                android:layout_width="wrap_content"
+                android:layout_height="50dp" >
+
+                <TextView
+                    android:id="@+id/text_view_next_done"
+                    android:layout_width="wrap_content"
+                    android:layout_height="50dp"
+                    android:gravity="center"
+                    android:paddingLeft="10dp"
+                    android:paddingRight="10dp"
+                    android:text="NEXT"
+                    android:textAlignment="center"
+                    android:textColor="@color/white"
+                    android:textSize="18sp" />
+            </LinearLayout>
+        </RelativeLayout>
+    </LinearLayout>
+</RelativeLayout>

@@ -22,13 +22,10 @@ public class DetailActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_detail);
         pic = findViewById(R.id.pic);
-        res_pic = findViewById(R.id.res_image);
         name = findViewById(R.id.name);
-        res_name = findViewById(R.id.res_name);
         desc = findViewById(R.id.desc);
         price = findViewById(R.id.price);
 //        views =
-        category = findViewById(R.id.category);
         String id = getIntent().getStringExtra("id");
 
         for(Item item: Util.itemList){
@@ -42,12 +39,9 @@ public class DetailActivity extends AppCompatActivity {
 
     public void initView(){
         Picasso.get().load("http://"+Util.URL+"/uploads/"+Currentitem.getImgUrl()).into(pic);
-        Picasso.get().load("http://"+Util.URL+"/uploads/"+Currentitem.getResImgUrl()).into(res_pic);
-        res_name.setText(Currentitem.getResName());
         name.setText(Currentitem.getName());
         price.setText(Currentitem.getPrice());
         desc.setText(Currentitem.getDesc());
-        category.setText(getResources().getStringArray(R.array.category)[Integer.parseInt(Currentitem.getCatId())-1]);
 
     }
 }

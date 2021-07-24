@@ -45,6 +45,7 @@ dependencies {
     // qrcode reader
     implementation 'com.google.zxing:core:3.3.0'
 
+    implementation 'com.github.vivchar:ViewPagerIndicator:1.1.0'
     implementation 'com.squareup.picasso:picasso:2.71828'
     implementation project(':spinerdialog')
 }

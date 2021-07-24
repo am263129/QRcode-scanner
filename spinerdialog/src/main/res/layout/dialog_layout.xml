@@ -4,7 +4,7 @@
     android:id="@+id/mainView"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:background="@color/background"
+    android:background="@drawable/bg_round_gray"
     android:orientation="vertical">
 
     <LinearLayout
@@ -17,6 +17,7 @@
             android:id="@+id/spinerTitle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:gravity="right"
             android:text="Select or Search Items"
             android:textSize="17sp"
             android:textStyle="bold" />
@@ -35,12 +36,12 @@
                 android:background="#ffffff"
                 android:gravity="right|center_vertical"
                 android:inputType="text" />
+
             <ImageView
                 android:id="@+id/searchIcon"
                 android:layout_width="30dp"
                 android:layout_height="30dp"
                 android:src="@drawable/ic_search_black_36dp" />
-
 
 
         </LinearLayout>

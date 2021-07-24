@@ -116,7 +116,13 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onQRCodeFound(String _qrCode) {
                 qrCode = _qrCode;
-                qrCodeFoundButton.setVisibility(View.VISIBLE);
+                Toast.makeText(getApplicationContext(), qrCode.replace("username:",""), Toast.LENGTH_SHORT).show();
+                Log.i(MainActivity.class.getSimpleName(), "QR Code Found: " + qrCode);
+                Intent intent = new Intent(MainActivity.this, CategoryActivity.class);
+                intent.putExtra("resname",qrCode);
+                startActivity(intent);
+                finish();
+//                qrCodeFoundButton.setVisibility(View.VISIBLE);
             }
 
             @Override

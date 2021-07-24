@@ -75,7 +75,7 @@ public static class ViewHolder extends RecyclerView.ViewHolder {
         viewHolder.name.setText(localDataSet.get(position).getName());
         viewHolder.desc.setText(localDataSet.get(position).getDesc());
         viewHolder.price.setText(localDataSet.get(position).getPrice());
-        Picasso.get().load("http://192.168.114.29/uploads/"+localDataSet.get(position).getImgUrl()).into(viewHolder.imageView);
+        Picasso.get().load("http://"+Util.URL+"/uploads/"+localDataSet.get(position).getImgUrl()).into(viewHolder.imageView);
         viewHolder.root.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
