@@ -1,0 +1,2 @@
+# QRcode-scanner
+simple project
