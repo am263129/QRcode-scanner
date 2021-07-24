@@ -13,9 +13,11 @@ import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
+import com.learntodroid.androidqrcodescanner.MainActivity;
 import com.learntodroid.androidqrcodescanner.R;
 import com.github.vivchar.viewpagerindicator.ViewPagerIndicator;
 import com.learntodroid.androidqrcodescanner.Util.PrivacyAdapter;
+import com.learntodroid.androidqrcodescanner.Util.Util;
 import com.learntodroid.androidqrcodescanner.Views.ClickableViewPager;
 import com.learntodroid.androidqrcodescanner.Views.PrefManager;
 
@@ -124,7 +126,8 @@ public class OnboardActivity extends AppCompatActivity {
 
 
     public void start(){
-        Intent intent = new Intent(this,SplashActivity.class);
+        Util.saveSetting(this);
+        Intent intent = new Intent(this, MainActivity.class);
         startActivity(intent);
         finish();
     }

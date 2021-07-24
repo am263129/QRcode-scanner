@@ -24,6 +24,7 @@ import android.widget.Toast;
 
 import com.google.common.util.concurrent.ListenableFuture;
 import com.learntodroid.androidqrcodescanner.Activity.CategoryActivity;
+import com.learntodroid.androidqrcodescanner.Util.Util;
 
 import java.util.concurrent.ExecutionException;
 
@@ -115,13 +116,19 @@ public class MainActivity extends AppCompatActivity {
         imageAnalysis.setAnalyzer(ContextCompat.getMainExecutor(this), new QRCodeImageAnalyzer(new QRCodeFoundListener() {
             @Override
             public void onQRCodeFound(String _qrCode) {
-                qrCode = _qrCode;
-                Toast.makeText(getApplicationContext(), qrCode.replace("username:",""), Toast.LENGTH_SHORT).show();
-                Log.i(MainActivity.class.getSimpleName(), "QR Code Found: " + qrCode);
-                Intent intent = new Intent(MainActivity.this, CategoryActivity.class);
-                intent.putExtra("resname",qrCode);
-                startActivity(intent);
-                finish();
+                if(!Util.start) {
+                    Util.start = true;
+                    qrCode = _qrCode;
+                    Toast.makeText(getApplicationContext(), qrCode.replace("username:", ""), Toast.LENGTH_SHORT).show();
+                    Log.i(MainActivity.class.getSimpleName(), "QR Code Found: " + qrCode);
+                    Intent intent = new Intent(MainActivity.this, CategoryActivity.class);
+                    intent.putExtra("resname", qrCode);
+                    startActivity(intent);
+                    finish();
+                }
+                else{
+                    finish();
+                }
 //                qrCodeFoundButton.setVisibility(View.VISIBLE);
             }
 
