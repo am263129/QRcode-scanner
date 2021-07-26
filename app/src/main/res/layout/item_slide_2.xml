@@ -1,81 +1,54 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout
-
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    >
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/white">
 
     <RelativeLayout
-
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="@drawable/gradient_background">
-
-        <ImageView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_alignParentRight="true"
-            android:layout_alignParentBottom="true"
-            android:adjustViewBounds="true"
-            android:scaleType="fitXY"
-            android:src="@drawable/bg_slide_2" />
+        android:layout_height="match_parent">
 
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_marginBottom="20dp">
 
-            <RelativeLayout
+            <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
-
-                <TextView
-                    android:id="@+id/title"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentTop="true"
-                    android:layout_marginTop="20dp"
-                    android:layout_marginBottom="50dp"
-                    android:padding="20dp"
-                    android:text="@string/title_slide_2"
-                    android:textAlignment="center"
-                    android:textColor="@color/white_text"
-                    android:textSize="30sp"
-                    android:textStyle="bold" />
 
                 <ImageView
                     android:id="@+id/img"
                     android:layout_width="match_parent"
                     android:layout_height="220dp"
-                    android:layout_below="@id/title"
-                    android:src="@drawable/slide_2" />
+                    android:padding="20dp"
+                    android:src="@drawable/slide_2"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.32999998" />
 
-                <ScrollView
+                <TextView
+                    app:layout_constraintTop_toBottomOf="@+id/img"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
                     android:id="@+id/description"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
+                    android:layout_height="wrap_content"
                     android:layout_below="@id/img"
-                    android:layout_marginBottom="50dp">
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="vertical">
-
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginBottom="50dp"
-                            android:padding="20dp"
-                            android:text="@string/description_slide_2"
-                            android:textAlignment="viewStart"
-                            android:textColor="@color/white" />
-                    </LinearLayout>
-                </ScrollView>
-
-            </RelativeLayout>
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginBottom="50dp"
+                    android:fontFamily="@font/nka"
+                    android:gravity="right"
+                    android:padding="20dp"
+                    android:text="@string/description_slide_2"
+                    android:textAlignment="center"
+                    android:textColor="@color/black"
+                    android:textSize="24sp" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
         </RelativeLayout>
     </RelativeLayout>
 </FrameLayout>

@@ -8,6 +8,7 @@ import java.util.ArrayList;
 public class Util {
     public static ArrayList<Item> itemList = new ArrayList<>();
     public static ArrayList<Category> categories = new ArrayList<>();
+//    public static String URL = "192.168.114.29";
     public static String URL = "192.168.0.114/GazaRESTOO";
     public static Restaurant currentRes;
     public static boolean start = false;

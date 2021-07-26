@@ -11,14 +11,13 @@ public class Item {
     public String ResImgUrl;
     public String Views;
 
-    public Item(String id, String name, String imgUrl,String desc, String catId,String price,String resName, String resImgUrl, String views){
+    public Item(String id, String name, String imgUrl,String desc, String catId,String price,String resImgUrl, String views){
         this.ID = id;
         this.Name = name;
         this.ImgUrl = imgUrl;
         this.Desc = desc;
         this.CatId = catId;
         this.Price = price;
-        this.ResName = resName;
         this.ResImgUrl = resImgUrl;
         this.Views = views;
     }

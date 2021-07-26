@@ -1,90 +1,86 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/relative_layout_slide"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/black"
     tools:context=".Activity.OnboardActivity">
+
     <com.learntodroid.androidqrcodescanner.Views.ClickableViewPager
-        android:gravity="center"
         android:id="@+id/view_pager_slide"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
-    </com.learntodroid.androidqrcodescanner.Views.ClickableViewPager>
+        android:layout_height="match_parent"
+        android:gravity="center"></com.learntodroid.androidqrcodescanner.Views.ClickableViewPager>
+
     <LinearLayout
         android:id="@+id/linear_layout_skip"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentRight="true"
         android:background="?android:attr/selectableItemBackground"
         android:clickable="true"
         android:focusable="true"
         android:orientation="horizontal"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentTop="true"
-        android:layout_width="wrap_content"
-        android:layout_height="50dp" >
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="50dp"
             android:layout_marginTop="10dp"
+            android:fontFamily="@font/nka"
             android:gravity="center"
             android:paddingLeft="10dp"
             android:paddingRight="10dp"
-            android:text="SKIP"
+            android:text="تخطى"
             android:textAlignment="center"
-            android:textColor="@color/white"
-            android:textSize="18dp" />
+            android:textColor="@color/black"
+            android:textSize="20sp" />
     </LinearLayout>
+
     <LinearLayout
-        android:layout_alignParentBottom="true"
-        android:orientation="vertical"
-        android:layout_width="match_parent"
-        android:layout_height="51dp">
-        <RelativeLayout
+        app:layout_constraintTop_toTopOf="parent"
+        android:id="@+id/linear_layout_next"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:background="?android:attr/selectableItemBackground"
+        android:clickable="true"
+        android:focusable="true"
+        android:orientation="horizontal"
+        tools:layout_editor_absoluteX="173dp">
+
+        <TextView
+            android:id="@+id/text_view_next_done"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:fontFamily="@font/nka"
             android:gravity="center"
-            android:layout_width="match_parent"
-            android:layout_height="50dp">
-
-            <com.github.vivchar.viewpagerindicator.ViewPagerIndicator
-                android:id="@+id/view_pager_indicator"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentLeft="true"
-                android:layout_centerVertical="true"
-                android:layout_marginLeft="20dp"
-                android:padding="5dp"
-                app:delimiterSize="6dp"
-                app:itemSelectedTint="@color/guider_orange"
-                app:itemSize="8dp"
-                app:itemTint="@color/white"
-                app:showDividers="beginning"
-
-                />
-            <LinearLayout
-                android:id="@+id/linear_layout_next"
-                android:background="?android:attr/selectableItemBackground"
-                android:clickable="true"
-                android:focusable="true"
-                android:orientation="horizontal"
-                android:layout_alignParentRight="true"
-                android:layout_alignParentBottom="true"
-                android:layout_width="wrap_content"
-                android:layout_height="50dp" >
-
-                <TextView
-                    android:id="@+id/text_view_next_done"
-                    android:layout_width="wrap_content"
-                    android:layout_height="50dp"
-                    android:gravity="center"
-                    android:paddingLeft="10dp"
-                    android:paddingRight="10dp"
-                    android:text="NEXT"
-                    android:textAlignment="center"
-                    android:textColor="@color/white"
-                    android:textSize="18sp" />
-            </LinearLayout>
-        </RelativeLayout>
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:text="التالي"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:textSize="20sp" />
     </LinearLayout>
-</RelativeLayout>
+
+    <com.github.vivchar.viewpagerindicator.ViewPagerIndicator
+        android:id="@+id/view_pager_indicator"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="5dp"
+        app:delimiterSize="10dp"
+        app:itemSelectedTint="@color/colorPrimaryDark"
+        app:itemSize="12dp"
+        app:itemTint="@color/orange"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.88"
+        app:showDividers="beginning" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

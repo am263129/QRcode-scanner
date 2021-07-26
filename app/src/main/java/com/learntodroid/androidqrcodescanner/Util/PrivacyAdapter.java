@@ -47,12 +47,6 @@ public class PrivacyAdapter extends PagerAdapter {
             case 3:
                 view = layoutInflater.inflate(R.layout.item_slide_3, container, false);
                 break;
-            case 4:
-                view = layoutInflater.inflate(R.layout.item_slide_4, container, false);
-                break;
-            case 5:
-                view = layoutInflater.inflate(R.layout.item_slide_5, container, false);
-                break;
         }
 
 

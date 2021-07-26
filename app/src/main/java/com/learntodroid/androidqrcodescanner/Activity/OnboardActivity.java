@@ -31,7 +31,6 @@ public class OnboardActivity extends AppCompatActivity {
     private PrivacyAdapter slide_adapter;
     private List<Integer> slideList= new ArrayList<>();
     private ViewPagerIndicator view_pager_indicator;
-    private RelativeLayout relative_layout_slide;
     private LinearLayout linear_layout_skip;
     private PrefManager prefManager;
     private LinearLayout linear_layout_next;
@@ -49,15 +48,12 @@ public class OnboardActivity extends AppCompatActivity {
         slideList.add(1);
         slideList.add(2);
         slideList.add(3);
-        slideList.add(4);
-        slideList.add(5);
 
         this.text_view_next_done=(TextView) findViewById(R.id.text_view_next_done);
         this.linear_layout_next=(LinearLayout) findViewById(R.id.linear_layout_next);
         this.linear_layout_skip=(LinearLayout) findViewById(R.id.linear_layout_skip);
         this.view_pager_indicator=(ViewPagerIndicator) findViewById(R.id.view_pager_indicator);
         this.view_pager_slide=(ClickableViewPager) findViewById(R.id.view_pager_slide);
-        this.relative_layout_slide=(RelativeLayout) findViewById(R.id.relative_layout_slide);
         slide_adapter = new PrivacyAdapter(getApplicationContext(),slideList);
         view_pager_slide.setAdapter(this.slide_adapter);
         view_pager_slide.setOffscreenPageLimit(1);
@@ -71,7 +67,7 @@ public class OnboardActivity extends AppCompatActivity {
         view_pager_slide.setOnItemClickListener(new ClickableViewPager.OnItemClickListener() {
             @Override
             public void onItemClick(int position) {
-                if (position <6){
+                if (position <4){
                     view_pager_slide.setCurrentItem(position+1);
                 }else{
                     start();
@@ -81,7 +77,7 @@ public class OnboardActivity extends AppCompatActivity {
         this.linear_layout_next.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (text_view_next_done.getText().equals("DONE")){
+                if (text_view_next_done.getText().equals("فعله")){
 
                     start();
                 }
@@ -101,9 +97,9 @@ public class OnboardActivity extends AppCompatActivity {
             @Override
             public void onPageSelected(int position) {
                 if (position+1==slideList.size()){
-                    text_view_next_done.setText("DONE");
+                    text_view_next_done.setText("فعله");
                 }else{
-                    text_view_next_done.setText("NEXT");
+                    text_view_next_done.setText("التالي");
                 }
             }
 

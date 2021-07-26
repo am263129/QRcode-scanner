@@ -54,6 +54,7 @@ public class MainActivity extends AppCompatActivity {
                 Intent intent = new Intent(MainActivity.this, CategoryActivity.class);
                 intent.putExtra("resname",qrCode);
                 startActivity(intent);
+                finish();
             }
         });
 
